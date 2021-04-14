@@ -118,6 +118,10 @@ function showCurrentPosition(currentPosition) {
 
 function currentCityClick(event) {
   event.preventDefault();
+
+  let cityHeadingSearching = document.querySelector("#cityHeading");
+  cityHeadingSearching.innerHTML = "Searching for city...";
+
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 
