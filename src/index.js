@@ -32,7 +32,7 @@ let currentDate = now.getDate();
 let currentHour = now.getHours();
 
 if (currentHour < 10) {
-  currentHour = `0${currentHours}`;
+  currentHour = `0${currentHour}`;
 }
 
 let currentMinutes = now.getMinutes();
@@ -76,6 +76,7 @@ farenheitTemp.addEventListener("click", changeToFarenheit);
 // Allows temp info to be updated via weather API via Current Button
 
 function showTemperature(response) {
+  event.preventDefault();
   let currentTemp = Math.round(response.data.main.temp);
   let currentCity = response.data.name;
   let lowToday = Math.round(response.data.main.temp_min);
@@ -117,6 +118,7 @@ function showCurrentPosition(currentPosition) {
 }
 
 function currentCityClick(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
 
@@ -126,6 +128,7 @@ currentCityButton.addEventListener("click", currentCityClick);
 // Allows temp info to be updated via weather API via Search Bar
 
 function updateCityInfo(event) {
+  event.preventDefault();
   let enteredDesiredCity = document.querySelector("#searchCity");
   let cityName = enteredDesiredCity.value;
   let unit = "imperial";
