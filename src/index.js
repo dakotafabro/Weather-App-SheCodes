@@ -76,7 +76,7 @@ farenheitTemp.addEventListener("click", changeToFarenheit);
 // Allows temp info to be updated via weather API via Current Button
 
 function showTemperature(response) {
-  response.preventDefault();
+  event.preventDefault();
   let currentTemp = Math.round(response.data.main.temp);
   let currentCity = response.data.name;
   let lowToday = Math.round(response.data.main.temp_min);
