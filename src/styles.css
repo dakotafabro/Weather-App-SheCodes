@@ -134,6 +134,8 @@ div.mainBody {
   margin: none;
   line-height: 0.5;
   padding: none;
+  position: relative;
+  top: 32px;
 }
 
 #mainTempEmoji {
