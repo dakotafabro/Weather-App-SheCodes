@@ -136,8 +136,10 @@ div.mainBody {
   padding: none;
 }
 
-.mainTempEmoji {
-  font-size: 100px;
+#mainTempEmoji {
+  height: 150px;
+  position: relative;
+  top: -17;
 }
 
 #highTemp {

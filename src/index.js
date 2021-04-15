@@ -84,6 +84,7 @@ function showTemperature(response) {
   let humidityReading = response.data.main.humidity;
   let feelsLikeReading = Math.round(response.data.main.feels_like);
   let windReading = Math.round(response.data.wind.speed);
+  let mainTempEmoji = response.data.weather[0].icon;
 
   let cityHeading = document.querySelector("#cityHeading");
   let mainTemp = document.querySelector("#bigTemp");
@@ -93,6 +94,7 @@ function showTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let feelsLike = document.querySelector("#feels-like");
   let wind = document.querySelector("#windSpeed");
+  let mainTempEmojiDisplayed = document.querySelector("#mainTempEmoji");
 
   cityHeading.innerHTML = `Welcome to ${currentCity}`;
   mainTemp.innerHTML = `${currentTemp}°`;
@@ -102,6 +104,10 @@ function showTemperature(response) {
   humidity.innerHTML = `Humidity: ${humidityReading}%`;
   feelsLike.innerHTML = `Feels like: ${feelsLikeReading}°`;
   wind.innerHTML = `Wind: ${windReading} mph`;
+  mainTempEmojiDisplayed.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${mainTempEmoji}@2x.png`
+  );
 }
 
 function showCurrentPosition(currentPosition) {
