@@ -69,6 +69,8 @@ function changeToFahrenheit(event) {
   bigTemp.innerHTML = `${desiredCityTemp}`;
 }
 
+// To-Do: allow conversion to update other elements (high temp, low temp, wind, feels like)
+
 let celsiusTemp = document.querySelector("a#celsiusTemp");
 celsiusTemp.addEventListener("click", changeToCelsius);
 
