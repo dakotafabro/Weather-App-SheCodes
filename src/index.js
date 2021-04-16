@@ -56,22 +56,24 @@ currentCityInfo.innerHTML = dateAndTime;
 // Allows for toggling between celsius and farenheit
 
 function changeToCelsius(event) {
+  event.preventDefault();
   let bigTemp = document.querySelector("#bigTemp");
-  let desiredCityTemp = "C";
-  bigTemp.innerHTML = `${desiredCityTemp}°`;
+  let desiredCityTemp = Math.round(((bigTemp.innerHTML - 32) * 5) / 9);
+  bigTemp.innerHTML = `${desiredCityTemp}`;
 }
 
-function changeToFarenheit(event) {
+function changeToFahrenheit(event) {
+  event.preventDefault();
   let bigTemp = document.querySelector("#bigTemp");
-  let desiredCityTemp = "F";
-  bigTemp.innerHTML = `${desiredCityTemp}°`;
+  let desiredCityTemp = Math.round((bigTemp.innerHTML * 5) / 9 + 32);
+  bigTemp.innerHTML = `${desiredCityTemp}`;
 }
 
 let celsiusTemp = document.querySelector("a#celsiusTemp");
 celsiusTemp.addEventListener("click", changeToCelsius);
 
-let farenheitTemp = document.querySelector("a#farenheitTemp");
-farenheitTemp.addEventListener("click", changeToFarenheit);
+let fahrenheitTemp = document.querySelector("a#fahrenheitTemp");
+fahrenheitTemp.addEventListener("click", changeToFahrenheit);
 
 // Allows temp info to be updated via weather API via Current Button
 
@@ -97,7 +99,7 @@ function showTemperature(response) {
   let mainTempEmojiDisplayed = document.querySelector("#mainTempEmoji");
 
   cityHeading.innerHTML = `Welcome to ${currentCity}`;
-  mainTemp.innerHTML = `${currentTemp}°`;
+  mainTemp.innerHTML = `${currentTemp}`;
   lowTemp.innerHTML = `L: ${lowToday}°`;
   highTemp.innerHTML = `H: ${highToday}°`;
   currentConditions.innerHTML = `${currentDescription}`;
