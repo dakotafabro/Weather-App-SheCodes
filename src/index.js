@@ -1,31 +1,4 @@
-// Allows for correct date and time to be displayed in app
-
-let shortDays = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-
-let fullDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "Decemeber",
-];
+// defined functions listed below
 
 // Allows for toggling between celsius and farenheit
 
@@ -168,6 +141,37 @@ function updateCityInfo(event) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
+// defined variables listed below
+
+// Allows for correct date and time to be displayed in app
+
+let shortDays = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+let fullDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "Decemeber",
+];
 
 let now = new Date();
 let currentDate = now.getDate();
