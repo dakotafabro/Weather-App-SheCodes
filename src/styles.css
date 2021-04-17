@@ -40,7 +40,7 @@ a {
 a:hover {
   text-decoration: overline;
   cursor: pointer;
-  color: #2eb0f7;
+  color: #ec6e4c;
 }
 
 .chanceOfRain {
@@ -160,4 +160,19 @@ div.mainBody {
 
 div.col {
   margin-top: none;
+}
+
+.mainWeather .active {
+  color: #ec6e4c;
+  cursor: default;
+}
+
+.mainWeather .active:hover {
+  text-decoration: none;
+}
+
+#conversionLinks {
+  position: relative;
+  top: -28px;
+  font-size: 1.5rem;
 }
