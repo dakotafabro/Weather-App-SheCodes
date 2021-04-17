@@ -4,9 +4,6 @@ body {
   color: #fff;
   margin: 20px auto;
   display: block;
-  /* background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/007/120/original/pexels-pixabay-41949.jpg?1618372038);
-  background-size: cover;
-  background-repeat: space-repeat; */
 }
 
 h1 {
@@ -53,7 +50,7 @@ div.mainBody {
   border: none;
   border-radius: 20px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 135px;
   display: block;
   min-width: 600px;
   max-width: 600px;
@@ -111,7 +108,6 @@ div.mainBody {
 }
 
 .footer {
-  /* font-size: smaller; */
   margin: 10px auto;
   display: block;
   text-align: center;
