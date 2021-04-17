@@ -83,7 +83,7 @@ function changeToFahrenheit(event) {
   highTemp.innerHTML = `H: ${originalHighTemp}°`;
   lowTemp.innerHTML = `L: ${originalLowTemp}°`;
   feelsLike.innerHTML = `Feels Like: ${originalFeelsLikeReading}°`;
-  windReading.innerHTEML = `Wind: ${originalWindReading} mph`;
+  windReading.innerHTML = `Wind: ${originalWindReading} mph`;
   humidityReading.innerHTML = `Humidity: ${originalHumdityReading}%`;
 }
 

@@ -19,6 +19,10 @@
     />
   </head>
   <body>
+    <video id="videoBG" poster="images/poster.jpg" autoplay muted loop>
+    <source src="images/Cloudy sky.mp4" type="video/mp4">
+    </video>
+
     <div class="container mainBody">
       <form id="citySearchBar" autocomplete="off">
         <span></span><input id="searchCity" type="text" placeholder="Enter a city" />
@@ -96,7 +100,7 @@
       </div>
     </div>
 
-    <div class="footer"><a href="https://github.com/dakotafabro/Weather-App-SheCodes">Open-source code</a> by Dakota Fabro 🇵🇭</div>
+    <div class="footer"><strong><a href="https://github.com/dakotafabro/Weather-App-SheCodes" id="openSourceLink">Open-source code</a> by Dakota Fabro 🇵🇭</strong></div>
     <script src="src/index.js"></script>
   </body>
 </html>
