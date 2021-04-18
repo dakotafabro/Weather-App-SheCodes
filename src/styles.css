@@ -159,6 +159,7 @@ div.mainBody {
   position: relative;
   top: 35px;
   font-size: small;
+  color: #ec6e4c;
 }
 
 #lowTemp {
@@ -166,6 +167,11 @@ div.mainBody {
   position: relative;
   bottom: 35px;
   font-size: small;
+  color: rgb(4, 159, 248);
+}
+
+.nightTemp {
+  color: rgb(4, 159, 248);
 }
 
 div.col {
