@@ -104,6 +104,7 @@ function showTemperature(response) {
   );
 
   fahrenheitTemp.classList.add("active");
+  displayForecast();
 }
 
 function showCurrentPosition(currentPosition) {
@@ -142,11 +143,32 @@ function updateCityInfo(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function displayForecast() {
+  let fiveDayForecast = document.querySelector("#fiveDayForecast");
+  let shortDays = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
+  let forecastHTML = `<div class="row fiveDay">`;
+
+  shortDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <span id="forecastDay1">${day}</span>
+            <span id="nameDay"></span>
+            <br />
+            <span id="iconDay">🌤</span>
+            <br />
+            <span id="highDay" class="dayTemp">--°</span> <span id="lowDay1">--°</span>
+          </div>`;
+  });
+
+  fiveDayForecast.innerHTML = forecastHTML;
+}
+
 // defined variables listed below
 
 // Allows for correct date and time to be displayed in app
 
-let shortDays = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+let shortDays = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri"];
 
 let fullDays = [
   "Sunday",
