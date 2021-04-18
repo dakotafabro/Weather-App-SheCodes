@@ -126,7 +126,7 @@ function displayForecast(response) {
             <br />
             <span id="iconDay"><img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="sun" width="37"/></span>
             <br />
-            <span id="highDay" class="dayTemp">${forecastMaxTemp}°</span> <span id="lowDay1" class="nightTemp">${forecastMinTemp}°</span>
+            <span id="highDay" class="dayTemp">${forecastMaxTemp}°</span> <span id="lowDay" class="nightTemp">${forecastMinTemp}°</span>
           </div>`;
     }
 
