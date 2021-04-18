@@ -156,34 +156,49 @@ function updateCityInfo(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let shortDays = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+
+  return shortDays[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastData = response.data.daily;
 
   let fiveDayForecast = document.querySelector("#fiveDayForecast");
-  let shortDays = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
   let forecastHTML = `<div class="row fiveDay">`;
 
-  shortDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-            <span id="forecastDay1">${day}</span>
+  forecastData.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      let forecastDayDate = forecastDay.dt;
+      let weatherIcon = forecastDay.weather[0].icon;
+      let forecastMaxTemp = Math.round(forecastDay.temp.max);
+      let forecastMinTemp = Math.round(forecastDay.temp.min);
+
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+            <span id="forecastDay1">${formatDay(forecastDayDate)}</span>
             <span id="nameDay"></span>
             <br />
-            <span id="iconDay">🌤</span>
+            <span id="iconDay"><img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="sun" width="37"/></span>
             <br />
-            <span id="highDay" class="dayTemp">--°</span> <span id="lowDay1">--°</span>
+            <span id="highDay" class="dayTemp">${forecastMaxTemp}°</span> <span id="lowDay1">${forecastMinTemp}°</span>
           </div>`;
-  });
+    }
 
-  fiveDayForecast.innerHTML = forecastHTML;
+    fiveDayForecast.innerHTML = forecastHTML;
+  });
 }
 
 // defined variables listed below
 
 // Allows for correct date and time to be displayed in app
 
-let shortDays = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri"];
+let shortDays = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
 let fullDays = [
   "Sunday",
