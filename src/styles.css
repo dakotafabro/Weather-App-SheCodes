@@ -40,6 +40,10 @@ a:hover {
   color: #ec6e4c;
 }
 
+.dayTemp {
+  color: #cc5f41;
+}
+
 .chanceOfRain {
   list-style-type: none;
   text-align: right;
