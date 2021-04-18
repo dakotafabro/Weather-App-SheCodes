@@ -62,6 +62,18 @@ function changeToFahrenheit(event) {
 
 // Allows temp info to be updated via weather API via Current Button
 
+function getForecast(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let unit = "imperial";
+  let apiKey = `dc73e9d9e0b24fe58eb2a3f82ea97342`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let currentCity = response.data.name;
@@ -104,7 +116,8 @@ function showTemperature(response) {
   );
 
   fahrenheitTemp.classList.add("active");
-  displayForecast();
+
+  getForecast(response.data.coord);
 }
 
 function showCurrentPosition(currentPosition) {
@@ -143,7 +156,9 @@ function updateCityInfo(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+
   let fiveDayForecast = document.querySelector("#fiveDayForecast");
   let shortDays = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thurs"];
   let forecastHTML = `<div class="row fiveDay">`;
